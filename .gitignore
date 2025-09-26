@@ -1,0 +1,39 @@
+# Ignorar la carpeta del entorno virtual
+envCapstone/
+
+# Ignorar archivos de Python
+*.pyc
+__pycache__/
+
+# Ignorar archivos de base de datos
+db.sqlite3
+
+# Ignorar archivos de migración
+*/migrations/*.pyc
+*/migrations/__pycache__/
+
+# Ignorar archivos de configuración local
+*.env
+
+# Ignorar archivos de caché
+*.cache
+*.log
+
+# Ignorar archivos de compilación
+*.egg-info/
+*.eggs/
+
+# Ignorar archivos de cobertura de pruebas
+.coverage
+htmlcov/
+
+# Ignorar archivos de media y static generados
+media/
+static/
+
+# Ignorar archivos de node_modules si usas npm
+node_modules/
+
+# Ignorar archivos de IDEs
+.vscode/
+.idea/
