@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-gj6oj$nfz606%(53o0+sr4dt9)h_0p7=lx4wzv@6b(e04q_12v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -137,10 +137,19 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES':[
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework_xml.renderers.XMLRenderer',
+    ],
     'DEFAULT_PERMISSION_CLASSES':[
         'rest_framework.permissions.IsAuthenticated',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES':[
         'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     ]
+}
+
+DJOSER = {
+    "USER_ID_FIELD":"username"
 }
