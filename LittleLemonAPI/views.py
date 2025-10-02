@@ -47,7 +47,7 @@ class menuview(APIView):
 
 
 class SingleMenuItem(generics.ListCreateAPIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
     queryset = Menu.objects.all()
     serializer_class = menuSerializer
 
@@ -56,10 +56,5 @@ class SingleMenuItem(generics.ListCreateAPIView):
 class BookingViewSet(viewsets.ModelViewSet):
     queryset = Booking.objects.all()
     serializer_class = bookingSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
-
-@api_view()
-@permission_classes([IsAuthenticated])
-def msg(request):
-    return Response({"message":"This view is protected"})
